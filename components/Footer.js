@@ -8,14 +8,11 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-5 py-10">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <div className="flex items-center gap-2.5">
-              <span className="flex h-8 w-8 items-center justify-center bg-[#e8611a] text-xs font-medium text-white">
-                SI
-              </span>
-              <span className="text-sm font-medium text-white">
-                Surveyor Indonesia
-              </span>
-            </div>
+            <img
+            src="/logo_ptsi_putih.svg"
+            alt="PT Surveyor Indonesia"
+            className="h-10 w-auto"
+            />
             <p className="mt-3 text-xs leading-relaxed">
               Layanan testing, inspection, certification, dan consultation
               independen bagi sektor strategis di Indonesia.

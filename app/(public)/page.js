@@ -97,8 +97,14 @@ export default async function Beranda() {
             </div>
           </div>
 
-          <div className="flex min-h-[240px] items-end bg-[#134a94]">
-            <div className="p-7 pb-14 text-white md:pb-16">
+          <div className="relative flex min-h-[240px] items-end overflow-hidden bg-[#134a94]">
+            <img
+              src="/hero.jpg"
+              alt=""
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-[#0b3c7d]/35" />
+            <div className="relative p-7 pb-14 text-white md:pb-16">
               <ShieldCheck size={30} className="text-[#e8611a]" />
               <p className="mt-3 text-sm font-medium">
                 Independen dan terakreditasi

@@ -14,23 +14,23 @@ export const metadata = {
 const kontak = [
   {
     Ikon: MapPin,
-    judul: 'Kantor pusat',
-    isi: ['Graha Surveyor Indonesia', 'Jakarta Selatan, Indonesia'],
+    judul: 'Kantor Pusat',
+    isi: ['Graha Surveyor Indonesia', 'Jl. Jend. Gatot Subroto Kav.56 Jakarta 12950 - Indonesia'],
   },
   {
     Ikon: Phone,
     judul: 'Telepon',
-    isi: ['(021) 0000 0000'],
+    isi: ['0215265526'],
   },
   {
     Ikon: Mail,
     judul: 'Email',
-    isi: ['info@contoh.co.id'],
+    isi: ['surveyorindonesia@ptsi.co.id'],
   },
   {
     Ikon: Clock,
     judul: 'Jam layanan',
-    isi: ['Senin sampai Jumat', '08.00 hingga 17.00 WIB'],
+    isi: ['Senin sampai Jumat', '07.30 hingga 16.30 WIB'],
   },
 ]
 
@@ -45,7 +45,7 @@ export default function Kontak() {
               KONSULTASI
             </span>
           </div>
-          <h1 className="mt-3 text-3xl font-medium text-white">Hubungi kami</h1>
+          <h1 className="mt-3 text-3xl font-medium text-white">Hubungi Kami</h1>
           <p className="mt-2 max-w-lg text-sm leading-relaxed text-[#c7d8ee]">
             Sampaikan kebutuhan Anda, tim kami akan membantu menentukan layanan
             yang paling sesuai.

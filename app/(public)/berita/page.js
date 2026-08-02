@@ -37,7 +37,7 @@ export default async function DaftarBerita() {
               PUBLIKASI
             </span>
           </div>
-          <h1 className="mt-3 text-3xl font-medium text-white">Berita</h1>
+          <h1 className="mt-3 text-3xl font-medium text-white">Berita & Artikel Terbaru</h1>
           <p className="mt-2 max-w-lg text-sm leading-relaxed text-[#c7d8ee]">
             Kabar terbaru seputar kegiatan, layanan, dan capaian perusahaan.
           </p>

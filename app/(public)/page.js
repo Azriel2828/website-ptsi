@@ -28,10 +28,10 @@ const daftarIkon = {
 }
 
 const statistik = [
-  { angka: '145+', label: 'Jenis layanan' },
-  { angka: '9', label: 'Kantor cabang' },
-  { angka: '10+', label: 'Sektor industri' },
-  { angka: '34', label: 'Provinsi terlayani' },
+  { angka: '10', label: 'Branch Office' },
+  { angka: '22+', label: 'Laboratorium' },
+  { angka: '12+', label: 'Representative Office' },
+  { angka: '48+', label: 'Work Area' },
 ]
 
 function tanggalIndonesia(nilai) {
@@ -74,25 +74,26 @@ export default async function Beranda() {
                 SEJAK 1991
               </span>
             </div>
-            <h1 className="mt-4 text-4xl leading-tight font-medium text-[#0b3c7d] md:text-[42px]">
-              Kepastian yang bisa dipertanggungjawabkan
+            <h1 className="mt-4 text-4xl leading-tight font-bold text-[#0b3c7d] md:text-[42px]">
+              Kepastian yang Bisa Dipertanggungjawabkan
             </h1>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-neutral-600">
-              Testing, inspection, certification, dan consultation independen
-              untuk infrastruktur, energi, maritim, dan ketahanan pangan.
+              Memberikan layanan Testing, Inspection, Certification, dan Consultation (TICC) 
+              yang independen untuk mendukung kualitas, keselamatan, kepatuhan, dan keberlanjutan 
+              di berbagai sektor industri.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-4">
               <Link
                 href="/layanan"
                 className="bg-[#0b3c7d] px-6 py-3 text-sm text-white transition hover:bg-[#082c5c]"
               >
-                Jelajahi layanan
+                Pelajari Layanan
               </Link>
               <Link
                 href="/tentang"
                 className="border-b border-neutral-300 pb-0.5 text-sm text-[#0b3c7d]"
               >
-                Profil perusahaan
+                Tentang Kami
               </Link>
             </div>
           </div>
@@ -107,10 +108,10 @@ export default async function Beranda() {
             <div className="relative p-7 pb-14 text-white md:pb-16">
               <ShieldCheck size={30} className="text-[#e8611a]" />
               <p className="mt-3 text-sm font-medium">
-                Independen dan terakreditasi
+                Independen dan Terakreditasi
               </p>
               <p className="mt-1.5 text-xs leading-relaxed text-[#c7d8ee]">
-                Setiap laporan melewati verifikasi berlapis sebelum diterbitkan.
+                Setiap Laporan Melewati Verifikasi Berlapis Sebelum Diterbitkan.
               </p>
             </div>
           </div>
@@ -127,7 +128,7 @@ export default async function Beranda() {
                 i < statistik.length - 1 ? 'md:border-r md:border-[#e3e7ed]' : ''
               }`}
             >
-              <p className="text-2xl font-medium text-[#0b3c7d]">{item.angka}</p>
+              <p className="text-2xl font-bold text-[#0b3c7d]">{item.angka}</p>
               <p className="mt-1 text-[11px] text-neutral-500">{item.label}</p>
             </div>
           ))}
@@ -140,9 +141,9 @@ export default async function Beranda() {
           LINI LAYANAN
         </p>
         <div className="mt-1.5 flex items-baseline justify-between gap-4">
-          <h2 className="text-2xl font-medium">Empat layanan unggulan</h2>
+          <h2 className="text-2xl font-medium">Empat Layanan Unggulan</h2>
           <Link href="/layanan" className="text-xs whitespace-nowrap text-[#e8611a]">
-            Semua layanan
+            Semua Layanan
           </Link>
         </div>
 
@@ -176,7 +177,7 @@ export default async function Beranda() {
       <section className="border-t border-[#e3e7ed] bg-[#f5f7fa]">
         <div className="mx-auto max-w-5xl px-5 py-14">
           <div className="flex items-baseline justify-between gap-4">
-            <h2 className="text-2xl font-medium">Kabar terbaru</h2>
+            <h2 className="text-2xl font-medium">Berita & Artikel Terbaru</h2>
             <Link href="/berita" className="text-xs whitespace-nowrap text-[#e8611a]">
               Semua berita
             </Link>

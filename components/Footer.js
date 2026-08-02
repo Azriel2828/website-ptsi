@@ -14,8 +14,9 @@ export default function Footer() {
             className="h-10 w-auto"
             />
             <p className="mt-3 text-xs leading-relaxed">
-              Layanan testing, inspection, certification, dan consultation
-              independen bagi sektor strategis di Indonesia.
+              Memberikan layanan Testing, Inspection, Certification, 
+              dan Consultation (TICC) yang independen untuk mendukung kualitas, 
+              keselamatan, kepatuhan, dan keberlanjutan di berbagai sektor industri.
             </p>
           </div>
 
@@ -32,9 +33,9 @@ export default function Footer() {
           <div>
             <p className="text-xs font-medium text-white">Kantor pusat</p>
             <p className="mt-3 text-xs leading-relaxed">
-              Graha Surveyor Indonesia
+              Graha Surveyor Indonesia 
               <br />
-              Jakarta Selatan, Indonesia
+              Jl. Jend. Gatot Subroto Kav.56 Jakarta 12950 - Indonesia
             </p>
           </div>
         </div>

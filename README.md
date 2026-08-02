@@ -1,36 +1,166 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Website Company Profile PT Surveyor Indonesia
 
-## Getting Started
+Website company profile dengan panel admin yang mendukung operasi
+Create, Read, Update, dan Delete pada data Berita dan Layanan.
 
-First, run the development server:
+Dibuat sebagai tugas seleksi magang.
+
+**Situs langsung:** https://website-ptsi.vercel.app
+
+> Catatan: proyek ini dibuat untuk keperluan seleksi dan tidak berafiliasi
+> resmi dengan PT Surveyor Indonesia. Sebagian isi konten merupakan contoh.
+
+---
+
+## Developer
+
+Nama: Azriel Darmawan
+
+---
+
+## Teknologi
+
+| Bagian | Teknologi |
+|---|---|
+| Kerangka kerja | Next.js 16 (App Router) |
+| Bahasa | JavaScript |
+| Gaya tampilan | Tailwind CSS |
+| Basis data | Supabase (PostgreSQL) |
+| Autentikasi | Supabase Auth |
+| Ikon | lucide-react |
+| Hosting | Vercel |
+
+---
+
+## Akun demo
+
+Gunakan akun berikut untuk mencoba panel admin di `/admin`.
+
+```
+Email        : admin@ptsi-demo.com
+Kata sandi   : adminptsi
+```
+
+---
+
+## Fitur
+
+### Sisi pengunjung
+
+- Beranda dengan empat layanan unggulan dan berita terbaru, keduanya
+  diambil langsung dari basis data
+- Daftar dan detail berita
+- Daftar dan detail layanan
+- Halaman Tentang dan Kontak
+- Tampilan menyesuaikan layar ponsel maupun komputer
+
+### Panel admin
+
+- Login dengan email dan kata sandi
+- Halaman admin tidak dapat diakses tanpa login
+- **Berita**: tambah, lihat, ubah, hapus, pencarian judul, status draf
+  atau terbit, ringkasan jumlah data
+- **Layanan**: tambah, lihat, ubah, hapus, pengaturan urutan tampil,
+  penanda layanan unggulan, pemilihan ikon
+- Dialog konfirmasi sebelum menghapus, menampilkan data yang akan dihapus
+
+---
+
+## Struktur basis data
+
+### Tabel `berita`
+
+| Kolom | Tipe | Keterangan |
+|---|---|---|
+| id | uuid | Kunci utama |
+| judul | text | Judul berita |
+| slug | text | Alamat halaman, unik |
+| kategori | text | Korporasi, Layanan, Kegiatan, Publikasi |
+| tanggal_terbit | date | Tanggal terbit |
+| gambar_url | text | Alamat gambar, boleh kosong |
+| ringkasan | text | Ringkasan singkat |
+| isi | text | Isi lengkap |
+| status | text | `draf` atau `terbit` |
+
+### Tabel `layanan`
+
+| Kolom | Tipe | Keterangan |
+|---|---|---|
+| id | uuid | Kunci utama |
+| nama | text | Nama layanan |
+| slug | text | Alamat halaman, unik |
+| ikon | text | Nama ikon yang dipakai |
+| deskripsi_singkat | text | Tampil di kartu |
+| deskripsi_lengkap | text | Tampil di halaman detail |
+| unggulan | boolean | Menentukan tampil di beranda |
+| urutan | integer | Urutan tampil |
+
+---
+
+## Keamanan
+
+Row Level Security diaktifkan pada kedua tabel:
+
+- Operasi baca terbuka untuk umum, karena situs bersifat publik
+- Operasi tambah, ubah, dan hapus hanya untuk pengguna yang sudah login
+
+Kunci koneksi disimpan sebagai environment variable dan tidak ikut
+tersimpan di repositori.
+
+---
+
+## Menjalankan secara lokal
+
+Dibutuhkan Node.js versi 18 atau lebih baru.
+
+```bash
+git clone https://github.com/Azriel2828/website-ptsi.git
+cd website-ptsi
+npm install
+```
+
+Buat berkas `.env.local` di akar proyek:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=alamat_proyek_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=kunci_anon_supabase
+```
+
+Jalankan:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Skema basis data beserta data contoh tersedia pada berkas `skema.sql`
+dan dapat dijalankan melalui SQL Editor di Supabase.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Struktur berkas
 
-To learn more about Next.js, take a look at the following resources:
+```
+app
+├── (public)          Halaman untuk pengunjung
+│   ├── page.js       Beranda
+│   ├── berita
+│   ├── layanan
+│   ├── tentang
+│   └── kontak
+├── (admin)
+│   └── admin         Panel admin
+│       ├── berita
+│       ├── layanan
+│       └── login
+├── layout.js         Pembungkus seluruh halaman
+└── globals.css
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+components            Komponen yang dipakai berulang
+lib
+└── supabase.js       Koneksi ke basis data
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Folder berkurung seperti `(public)` hanya berfungsi sebagai pengelompokan
+dan tidak muncul pada alamat halaman.

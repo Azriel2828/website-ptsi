@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { supabase } from '@/lib/supabase'
+import Image from 'next/image'
 
 export default function Login() {
   const router = useRouter()
@@ -51,7 +52,7 @@ export default function Login() {
       <div className="w-full max-w-sm">
         <div className="mb-6 text-center">
           <span className="inline-flex h-10 w-10 items-center justify-center bg-[#0b3c7d] text-sm font-medium text-white">
-            SI
+            <Image src="/logo_ptsi_putih.svg" alt="Logo" width={35} height={28} className="object-contain" />
           </span>
           <h1 className="mt-4 text-xl font-medium text-[#0b3c7d]">
             Panel admin

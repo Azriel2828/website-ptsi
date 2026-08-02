@@ -14,6 +14,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { ExternalLink, ListChecks, LogOut, Newspaper } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
+import Image from 'next/image'
 
 const menu = [
   { label: 'Berita', href: '/admin/berita', icon: Newspaper },
@@ -64,8 +65,8 @@ export default function AdminLayout({ children }) {
     <div className="flex min-h-screen bg-[#f7f8fa]">
       <aside className="flex w-16 shrink-0 flex-col bg-[#082c5c] py-4 md:w-52">
         <div className="flex items-center gap-2.5 border-b border-[#1b4c86] px-3 pb-4 md:px-4">
-          <span className="flex h-7 w-7 shrink-0 items-center justify-center bg-[#e8611a] text-[10px] font-medium text-white">
-            SI
+          <span className="flex h-0 w-7 shrink-0 items-center justify-center bg-[#e8611a] text-[10px] font-medium text-white">
+            <Image src="/logo_ptsi_putih.svg" alt="Logo" width={35} height={28} className="object-contain" />
           </span>
           <span className="hidden text-xs text-white md:block">Panel admin</span>
         </div>

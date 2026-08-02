@@ -75,7 +75,7 @@ export default async function Beranda() {
               </span>
             </div>
             <h1 className="mt-4 text-4xl leading-tight font-bold text-[#0b3c7d] md:text-[42px]">
-              Kepastian yang Bisa Dipertanggungjawabkan
+              The Most Trusted Partner in Sustainability Assurance
             </h1>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-neutral-600">
               Memberikan layanan Testing, Inspection, Certification, dan Consultation (TICC) 
